@@ -38,6 +38,12 @@
 				<h:outputText value="#{post.postDate}" />
 			</h:column>
 		</h:dataTable>
+		<h:commandButton value="Add Article" action="add" actionListener="#{addPostController.add}">
+			<f:attribute name="postType" value="Article"/>
+		</h:commandButton>
+		<h:commandButton value="Add Question" action="add" actionListener="#{addPostController.add}">
+			<f:attribute name="postType" value="Question"/>
+		</h:commandButton>
 	</h:form>
 </f:view>
 </body>

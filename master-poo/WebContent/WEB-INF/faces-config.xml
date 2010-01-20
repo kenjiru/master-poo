@@ -33,6 +33,16 @@
 			<value>#{dataRepository}</value>
 		</managed-property>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>addPostController</managed-bean-name>
+		<managed-bean-class>app.controller.AddPostController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>dataRepository</property-name>
+			<property-class>app.model.DataRepository</property-class>
+			<value>#{dataRepository}</value>
+		</managed-property>
+	</managed-bean>
 	
 	<navigation-rule> 
 		<from-view-id>/pages/listPosts.jsp</from-view-id> 
