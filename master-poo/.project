@@ -27,4 +27,11 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>data.xml</name>
+			<type>1</type>
+			<location>/home/radu/workspace-jee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/master-poo/WEB-INF/classes/app/model/data.xml</location>
+		</link>
+	</linkedResources>
 </projectDescription>
