@@ -14,10 +14,32 @@
 	<f:loadBundle basename="app.bundle.messages" var="msg"/>
 	<h:form binding="#{addPostController.addArticleForm}">
 		<p>Add Article</p>
+		<h:panelGrid columns="2">
+			<h:outputText value="Author name:" />
+			<h:inputText value="#{addPostController.articlePage.author}" />
+			<h:outputText value="Title:" />
+			<h:inputTextarea value="#{addPostController.articlePage.title}" />
+			<h:outputText value="Summary:" />
+			<h:inputTextarea value="#{addPostController.articlePage.summary}" />
+			<h:outputText value="Content:" />
+			<h:inputTextarea value="#{addPostController.articlePage.content}" />
+			<h:outputText value="" />
+			<h:commandButton value="Submit" action="#{addPostController.addArticle}"/>
+		</h:panelGrid>
 	</h:form>
 	
 	<h:form binding="#{addPostController.addQuestionForm}">
 		<p>Add Question</p>
+		<h:panelGrid columns="2">
+			<h:outputText value="Author name:" />
+			<h:inputText value="#{addPostController.questionPage.author}" />
+			<h:outputText value="Title:" />
+			<h:inputTextarea value="#{addPostController.questionPage.title}" />
+			<h:outputText value="Content:" />
+			<h:inputTextarea value="#{addPostController.questionPage.content}" />
+			<h:outputText value="" />
+			<h:commandButton value="Submit" action="#{addPostController.addQuestion}"/>
+		</h:panelGrid>
 	</h:form>
 </f:view>
 </body>

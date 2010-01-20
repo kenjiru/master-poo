@@ -11,6 +11,14 @@ public class AddPostController {
 	private String postType;
 	private UIForm addArticleForm;
 	private UIForm addQuestionForm;
+	private ArticlePage articlePage;
+	private QuestionPage questionPage;
+	
+	public AddPostController() {
+		articlePage = new ArticlePage();
+		questionPage = new QuestionPage();
+		postType = "none";
+	}
 	
 	public void beforePhase(PhaseEvent ev) {
 		addArticleForm.setRendered(false);
@@ -31,6 +39,18 @@ public class AddPostController {
 	
 	public void add(ActionEvent event) {
 		postType = (String) event.getComponent().getAttributes().get("postType");
+	}
+	
+	public String addArticle() {
+		dataRepository.addPost(articlePage);
+		
+		return null;
+	}
+	
+	public String addQuestion() {
+		dataRepository.addPost(questionPage);
+		
+		return null;
 	}
 
 	public String getAddAttribute() {
@@ -55,5 +75,21 @@ public class AddPostController {
 
 	public void setAddArticleForm(UIForm addArticleForm) {
 		this.addArticleForm = addArticleForm;
+	}
+
+	public ArticlePage getArticlePage() {
+		return articlePage;
+	}
+
+	public void setArticlePage(ArticlePage articlePage) {
+		this.articlePage = articlePage;
+	}
+
+	public QuestionPage getQuestionPage() {
+		return questionPage;
+	}
+
+	public void setQuestionPage(QuestionPage questionPage) {
+		this.questionPage = questionPage;
 	}
 }

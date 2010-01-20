@@ -54,5 +54,5 @@
 			<from-outcome>add</from-outcome> 
 			<to-view-id>/pages/addPost.jsp</to-view-id> 
 		</navigation-case> 
-	</navigation-rule>  
+	</navigation-rule>
 </faces-config>

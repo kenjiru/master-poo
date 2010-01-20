@@ -47,6 +47,12 @@ public class DataRepository {
 		}
 	}
 	
+	public void addPost(Page post) {
+		posts.add(post);
+		
+		persist();
+	}
+	
 	public void addComment(Page post, Comment comment) {
 		posts.get(posts.indexOf(post)).addComment(comment);
 		

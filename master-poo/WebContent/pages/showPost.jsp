@@ -48,9 +48,8 @@
 				<h:panelGrid columns="2">
 					<h:outputText value="Author: " />
 					<h:outputText value="#{comment.author}" />
-				</h:panelGrid>
-				<h:outputText value="#{comment.content}" />
-				<h:panelGrid columns="2">
+					<h:outputText value="Comment: " />
+					<h:outputText value="#{comment.content}" />
 					<h:outputText value="Post Date: " />
 					<h:outputText value="#{comment.postDate}" />
 				</h:panelGrid>
