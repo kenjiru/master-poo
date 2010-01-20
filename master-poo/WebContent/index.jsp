@@ -1,5 +1,5 @@
 <html>
  <body>
-  <jsp:forward page="/pages/hello.jsf" />
+  <jsp:forward page="/pages/post.jsf" />
  </body>
 </html>

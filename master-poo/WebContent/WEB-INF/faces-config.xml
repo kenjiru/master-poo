@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+
 <!DOCTYPE faces-config PUBLIC
   "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
   "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
@@ -9,8 +10,21 @@
             <default-locale>en</default-locale>
             <supported-locale>en</supported-locale>
         </locale-config>
-        <message-bundle>
-            app.bundle
-        </message-bundle>
+        <message-bundle>app.bundle</message-bundle>
     </application>
+    <managed-bean>
+		<managed-bean-name>dataRepository</managed-bean-name>
+		<managed-bean-class>app.model.DataRepository</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>postController</managed-bean-name>
+		<managed-bean-class>app.controller.PostController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>dataRepository</property-name>
+			<property-class>app.model.DataRepository</property-class>
+			<value>#{dataRepository}</value>
+		</managed-property>
+	</managed-bean>
 </faces-config>

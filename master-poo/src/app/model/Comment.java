@@ -3,10 +3,17 @@ package app.model;
 import java.util.Date;
 
 public abstract class Comment {
+	int id;
 	String author;
 	String content;
 	Date postDate;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getAuthor() {
 		return author;
 	}
