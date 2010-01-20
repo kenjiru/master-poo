@@ -1,0 +1,66 @@
+<list>
+  <app.model.ArticlePage>
+    <id>0</id>
+    <author>John Weldon</author>
+    <title>Change user password in Ubuntu</title>
+    <content>This article will show how to change your password in Ubuntu.</content>
+    <postDate>3909-02-19 00:00:00.0 EET</postDate>
+    <comments>
+      <app.model.ArticleComment>
+        <id>0</id>
+        <author>Jonny Deep</author>
+        <content>Nice article you have there!</content>
+        <postDate>3909-02-24 00:00:00.0 EET</postDate>
+      </app.model.ArticleComment>
+      <app.model.ArticleComment>
+        <id>0</id>
+        <author>Billy Bill</author>
+        <content>I don&apos;t like it!</content>
+        <postDate>3909-02-24 00:00:00.0 EET</postDate>
+      </app.model.ArticleComment>
+    </comments>
+    <summary>No summary</summary>
+  </app.model.ArticlePage>
+  <app.model.QuestionPage>
+    <id>0</id>
+    <author>Justin Smith</author>
+    <title>How to change desktop background in Gnome?</title>
+    <content>How do I change the background image of the desktop in Gnome?</content>
+    <postDate>3909-02-17 00:00:00.0 EET</postDate>
+    <comments>
+      <app.model.QuestionComment>
+        <id>0</id>
+        <author>Miky Mouse</author>
+        <content>I don&apos;t know, don&apos;t ask me!</content>
+        <postDate>3909-03-03 00:00:00.0 EET</postDate>
+      </app.model.QuestionComment>
+      <app.model.QuestionComment>
+        <id>0</id>
+        <author>Tom Cat</author>
+        <content>I think you should try this aproach!</content>
+        <postDate>3909-03-16 00:00:00.0 EET</postDate>
+      </app.model.QuestionComment>
+    </comments>
+  </app.model.QuestionPage>
+  <app.model.QuestionPage>
+    <id>0</id>
+    <author>Eric Tellmore</author>
+    <title>How can I start a service?</title>
+    <content>I want to start the apache service on a Fedora Core distribution. How can I do that?</content>
+    <postDate>3909-03-21 00:00:00.0 EET</postDate>
+    <comments>
+      <app.model.QuestionComment>
+        <id>0</id>
+        <author>Miky Mouse</author>
+        <content>Just use the command: service apache2 start</content>
+        <postDate>3909-03-03 00:00:00.0 EET</postDate>
+      </app.model.QuestionComment>
+      <app.model.QuestionComment>
+        <id>0</id>
+        <author>Apple Man</author>
+        <content>You can also use the inet.d commands.</content>
+        <postDate>3909-04-03 00:00:00.0 EET</postDate>
+      </app.model.QuestionComment>
+    </comments>
+  </app.model.QuestionPage>
+</list>
