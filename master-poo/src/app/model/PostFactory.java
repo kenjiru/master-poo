@@ -1,5 +1,7 @@
 package app.model;
 
+import java.util.*;
+
 /*
  * Implements the Factory Method design patterns.
  */

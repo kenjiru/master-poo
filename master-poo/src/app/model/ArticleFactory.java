@@ -1,10 +1,14 @@
 package app.model;
 
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 /*
  * Implements the Singleton, Abstract Factory and Factory Method design patterns.
  */
 public class ArticleFactory implements PostFactory {
 	private static ArticleFactory articleFactory;
+	private ArticlePageBuilder articleBuilder;
 	
 	private ArticleFactory() { }
 	
@@ -14,11 +18,22 @@ public class ArticleFactory implements PostFactory {
 		
 		return articleFactory;
 	}
-
-	@Override
-	public Page createPage() {
-		return new ArticlePage();
+	
+	public void setArticlePageBuilder(ArticlePageBuilder articleBuilder) {
+		this.articleBuilder = articleBuilder;
 	}
+
+	public Page createPage() {
+		articleBuilder.buildArticle();
+		articleBuilder.buildAuthor("Article Author");
+		articleBuilder.buildContent("Article Content");
+		articleBuilder.buildTitle("Article Title");
+		articleBuilder.buildPostDate(Calendar.getInstance().getTime());
+		articleBuilder.buildSummary("No summary yet.");
+		
+		return articleBuilder.getArticle();
+	}
+	
 	
 	@Override
 	public Comment createComment() {

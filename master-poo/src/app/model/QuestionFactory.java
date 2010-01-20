@@ -1,10 +1,13 @@
 package app.model;
 
+import java.util.Calendar;
+
 /*
  * Implements the Singleton, Abstract Factory and Factory Method design patterns.
  */
 public class QuestionFactory implements PostFactory {
 	private static QuestionFactory questionFactory;
+	public QuestionPageBuilder questionBuilder;
 	
 	private QuestionFactory() { }
 	
@@ -14,10 +17,15 @@ public class QuestionFactory implements PostFactory {
 		
 		return questionFactory;
 	}
-
-	@Override
+	
 	public Page createPage() {
-		return new QuestionPage();
+		questionBuilder.buildQuestion();
+		questionBuilder.buildAuthor("Question Author");
+		questionBuilder.buildContent("Question Content");
+		questionBuilder.buildTitle("Question Title");
+		questionBuilder.buildPostDate(Calendar.getInstance().getTime());
+		
+		return questionBuilder.getQuestion();
 	}
 	
 	@Override
