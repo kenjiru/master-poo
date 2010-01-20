@@ -12,11 +12,11 @@
 <body>
 <f:view>
 	<f:loadBundle basename="app.bundle.messages" var="msg"/>
-	<h:form binding="#{postController.listPostsForm}">
+	<h:form binding="#{listPostsController.listPostsForm}">
 		<p>Posts</p>
-		<h:dataTable value="#{postController.posts}" var="post"
+		<h:dataTable value="#{listPostsController.posts}" var="post"
 			rowClasses="oddRow, evenRow"
-			rendered="#{not empty postController.posts}"
+			rendered="#{not empty listPostsController.posts}"
 			styleClass="contactTable" headerClass="headerTable"
 			columnClasses="normal,centered">
 			<h:column>
@@ -25,8 +25,8 @@
 						<h:outputText value="Title" />
 					</h:column>
 				</f:facet>
-				<h:commandLink value="#{post.title}" action="#{postController.showPost}">
-					<f:setPropertyActionListener target="#{postController.selectedPost}" value="#{post}" />
+				<h:commandLink value="#{post.title}" action="#{listPostsController.showPost}">
+					<f:setPropertyActionListener target="#{listPostsController.selectedPost}" value="#{post}" />
 				</h:commandLink>
 			</h:column>
 			<h:column>

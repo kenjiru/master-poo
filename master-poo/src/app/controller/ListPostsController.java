@@ -4,7 +4,7 @@ import javax.faces.component.UIForm;
 import java.util.*;
 import app.model.*;
 
-public class PostController {
+public class ListPostsController {
 	private DataRepository dataRepository;
 	private Page selectedPost;
 	private UIForm listPostsForm;
@@ -15,6 +15,8 @@ public class PostController {
 	}
 	
 	public String showPost() {
+		dataRepository.setCurrentPost(selectedPost);
+		
 		return "show";
 	}
 

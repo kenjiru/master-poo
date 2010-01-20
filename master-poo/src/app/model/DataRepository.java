@@ -9,15 +9,17 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class DataRepository {
 	private List<Page> posts;
-	private String fileName;
+	private String filePath;
+	private Page currentPost;
 	
 	public DataRepository() {
-		fileName = "data.xml";
-		
-		URL fileUrl = this.getClass().getResource(fileName);
+		URL fileUrl = this.getClass().getResource("data.xml");
+		// TODO use the relative path
+//		filePath = fileUrl.getPath();
+		filePath = "/home/radu/data.xml";
 
 		try {
-			FileInputStream fos = new FileInputStream(fileUrl.getPath());
+			FileInputStream fos = new FileInputStream(filePath);
 			XStream xtream = new XStream(new DomDriver());
 			posts = (ArrayList<Page>) xtream.fromXML(fos);
 			fos.close();
@@ -30,11 +32,9 @@ public class DataRepository {
 		}
 	}
 	
-	public void commit() {
-		URL fileUrl = this.getClass().getResource(fileName);
-
+	public void persist() {
 		try {
-			FileOutputStream fos = new FileOutputStream(fileUrl.getPath());
+			FileOutputStream fos = new FileOutputStream(filePath);
 			XStream xtream = new XStream(new DomDriver());
 			xtream.toXML(posts, fos);
 			fos.close();
@@ -47,7 +47,21 @@ public class DataRepository {
 		}
 	}
 	
+	public void addComment(Page post, Comment comment) {
+		posts.get(posts.indexOf(post)).addComment(comment);
+		
+		persist();
+	}
+	
 	public List<Page> getPosts() {
 		return posts;
+	}
+
+	public Page getCurrentPost() {
+		return currentPost;
+	}
+
+	public void setCurrentPost(Page currentPost) {
+		this.currentPost = currentPost;
 	}
 }

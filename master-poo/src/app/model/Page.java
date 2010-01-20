@@ -14,6 +14,10 @@ public abstract class Page {
 		comments = new ArrayList<Comment>();
 	}
 	
+	public void addComment(Comment comment) {
+		comments.add(comment);
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -44,8 +48,8 @@ public abstract class Page {
 	public String getAuthor() {
 		return author;
 	}
-	
-	public void addComment(Comment comment) {
-		comments.add(comment);
+
+	public List<Comment> getComments() {
+		return comments;
 	}
 }

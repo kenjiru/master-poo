@@ -14,8 +14,18 @@
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>postController</managed-bean-name>
-		<managed-bean-class>app.controller.PostController</managed-bean-class>
+		<managed-bean-name>listPostsController</managed-bean-name>
+		<managed-bean-class>app.controller.ListPostsController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>dataRepository</property-name>
+			<property-class>app.model.DataRepository</property-class>
+			<value>#{dataRepository}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>showPostController</managed-bean-name>
+		<managed-bean-class>app.controller.ShowPostController</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 		<managed-property>
 			<property-name>dataRepository</property-name>
