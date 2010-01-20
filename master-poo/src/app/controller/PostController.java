@@ -1,7 +1,6 @@
 package app.controller;
 
 import javax.faces.component.UIForm;
-import javax.faces.event.ActionEvent;
 import java.util.*;
 import app.model.*;
 
@@ -15,14 +14,8 @@ public class PostController {
 		this.dataRepository = dataRepository;
 	}
 	
-	public String view() {
-		listPostsForm.setRendered(false);
-		
-		return "view";
-	}
-	
-	public void view2(ActionEvent ae) {
-		
+	public String showPost() {
+		return "show";
 	}
 
 	public List<Page> getPosts() {

@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 
-<!DOCTYPE faces-config PUBLIC
-  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
-  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
-
 <faces-config>
 	<application>
         <locale-config>
@@ -27,4 +23,16 @@
 			<value>#{dataRepository}</value>
 		</managed-property>
 	</managed-bean>
+	
+	<navigation-rule> 
+		<from-view-id>/pages/listPosts.jsp</from-view-id> 
+		<navigation-case> 
+			<from-outcome>show</from-outcome> 
+			<to-view-id>/pages/showPost.jsp</to-view-id> 
+		</navigation-case> 
+		<navigation-case> 
+			<from-outcome>add</from-outcome> 
+			<to-view-id>/pages/addPost.jsp</to-view-id> 
+		</navigation-case> 
+	</navigation-rule>  
 </faces-config>

@@ -25,7 +25,7 @@
 						<h:outputText value="Title" />
 					</h:column>
 				</f:facet>
-				<h:commandLink value="#{post.title}" action="#{postController.view}">
+				<h:commandLink value="#{post.title}" action="#{postController.showPost}">
 					<f:setPropertyActionListener target="#{postController.selectedPost}" value="#{post}" />
 				</h:commandLink>
 			</h:column>
