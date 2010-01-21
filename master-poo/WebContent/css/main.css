@@ -1,0 +1,63 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, table, th, td {
+	margin:0;
+	padding:0;
+}
+body {
+	background:#FFFFFF;
+	color:#555555;
+	font-family:"Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
+	line-height:22px;
+}
+h1 {
+	color:#21759B;
+	font-weight:normal;
+	font-family:Georgia,Times,"Times New Roman",serif;
+	font-size:20px;
+	font-style:normal;
+}
+a {
+	color:#21759B;
+	font-weight:normal;
+	text-decoration:none;
+}
+a:visited {
+	color:#4CA6CF;
+}
+
+.wrapper {
+	width: 800px;
+	margin:0 auto;
+}
+
+#header {
+	background:#464646;
+	height:70px;
+	min-width:960px;
+}
+#header h1 {
+	color: white;
+	font-size:30px;
+	display:block;
+	float:left;
+	margin-top: 16px;
+}
+
+#headline {
+	background:#E4F2FD;
+	border-bottom:1px solid #C6D9E9;
+	height:60px;
+	min-width:960px;
+}
+#headline h1 {
+	color:#555555;
+	font-size:20px;
+	padding-top: 16px;
+}
+
+.postsTable .header {
+	text-align: left;
+}
+.postsTable td {
+	padding: 2px;
+	padding-right: 20px;
+}

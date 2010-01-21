@@ -7,18 +7,29 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>List articles</title>
+	<title>Forum Posts</title>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/main.css" />
 </head>
+
 <body>
+<div id="header">
+	<div class="wrapper">
+		<h1>Forum Application</h1>
+	</div>
+</div>
+<div id="headline">
+	<div class="wrapper">
+		<h1>Forum Posts</h1>
+	</div>
+</div>
+
+<br/>
+<div class="wrapper">
 <f:view>
 	<f:loadBundle basename="app.bundle.messages" var="msg"/>
 	<h:form binding="#{listPostsController.listPostsForm}">
-		<p>Posts</p>
 		<h:dataTable value="#{listPostsController.posts}" var="post"
-			rowClasses="oddRow, evenRow"
-			rendered="#{not empty listPostsController.posts}"
-			styleClass="contactTable" headerClass="headerTable"
-			columnClasses="normal,centered">
+			rowClasses="oddRow, evenRow" styleClass="postsTable" headerClass="header" columnClasses="normal">
 			<h:column>
 				<f:facet name="header">
 					<h:column>
@@ -38,6 +49,8 @@
 				<h:outputText value="#{post.postDate}" />
 			</h:column>
 		</h:dataTable>
+		
+		<br/>
 		<h:commandButton value="Add Article" action="add" actionListener="#{addPostController.add}">
 			<f:attribute name="postType" value="Article"/>
 		</h:commandButton>
@@ -46,5 +59,7 @@
 		</h:commandButton>
 	</h:form>
 </f:view>
+</div>
+
 </body>
 </html>

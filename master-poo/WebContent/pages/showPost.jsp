@@ -10,6 +10,7 @@
 	<title>List articles</title>
 </head>
 <body>
+
 <f:view beforePhase="#{showPostController.beforePhase}">
 	<f:loadBundle basename="app.bundle.messages" var="msg"/>
 	<h:form binding="#{showPostController.showArticleForm}">
