@@ -71,6 +71,8 @@
 		<p>Leave a comment:</p>
 		<h:inputText value="#{showPostController.questionComment.author}" />
 		<h:outputText value="Author" /> <br/>
+		<h:inputText value="#{showPostController.questionComment.title}" />
+		<h:outputText value="Title" /> <br/>
 		<h:inputTextarea value="#{showPostController.questionComment.content}" /> <br/>
 		<h:commandButton styleClass="submit" value="Submit" action="#{showPostController.addComment}"/>
 	</h:form>
