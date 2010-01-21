@@ -15,8 +15,8 @@ public class DataRepository {
 	public DataRepository() {
 		URL fileUrl = this.getClass().getResource("data.xml");
 		// TODO use the relative path
-//		filePath = fileUrl.getPath();
-		filePath = "/home/radu/data.xml";
+		filePath = fileUrl.getPath();
+//		filePath = "/home/radu/data.xml";
 
 		try {
 			FileInputStream fos = new FileInputStream(filePath);

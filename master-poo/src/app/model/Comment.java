@@ -2,11 +2,21 @@ package app.model;
 
 import java.util.Date;
 
-public abstract class Comment {
+public abstract class Comment implements Cloneable{
 	int id;
 	String author;
 	String content;
 	Date postDate;
+	
+	public Comment clone() {
+		Comment copy = null;
+		try {
+			copy = (Comment) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return copy;
+	}
 	
 	public int getId() {
 		return id;
