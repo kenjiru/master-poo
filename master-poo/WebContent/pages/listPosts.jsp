@@ -7,20 +7,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Forum Posts</title>
+	<title>Recent Posts</title>
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/main.css" />
 </head>
 
 <body>
 <div id="header">
-	<div class="wrapper">
-		<h1>Forum Application</h1>
-	</div>
+	<div class="wrapper"><a href="index.jsp">Forum Application</a></div>
 </div>
 <div id="headline">
-	<div class="wrapper">
-		<h1>Forum Posts</h1>
-	</div>
+	<div class="wrapper"><h1>Recent Posts</h1></div>
 </div>
 
 <br/>
@@ -43,12 +39,14 @@
 		</h:dataTable>
 		
 		<br/>
-		<h:commandButton value="Add Article" action="add" actionListener="#{addPostController.add}">
-			<f:attribute name="postType" value="Article"/>
-		</h:commandButton>
-		<h:commandButton value="Add Question" action="add" actionListener="#{addPostController.add}">
-			<f:attribute name="postType" value="Question"/>
-		</h:commandButton>
+		<div class="nav">
+			<h:commandLink value="Add Article" action="add" actionListener="#{addPostController.add}">
+				<f:attribute name="postType" value="Article"/>
+			</h:commandLink>
+			<h:commandLink value="Add Question" action="add" actionListener="#{addPostController.add}">
+				<f:attribute name="postType" value="Question"/>
+			</h:commandLink>
+		</div>
 	</h:form>
 </f:view>
 </div>

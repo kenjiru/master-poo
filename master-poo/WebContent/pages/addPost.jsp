@@ -7,40 +7,48 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>List articles</title>
+	<title>Add a post</title>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/main.css" />
 </head>
+
 <body>
+<div id="header">
+	<div class="wrapper"><a href="../index.jsp">Forum Application</a></div>
+</div>
+<div id="headline">
+	<div class="wrapper"><h1>Add a post</h1></div>
+</div>
+
+<br/>
+<div class="wrapper">
 <f:view beforePhase="#{addPostController.beforePhase}">
 	<f:loadBundle basename="app.bundle.messages" var="msg"/>
-	<h:form binding="#{addPostController.addArticleForm}">
-		<p>Add Article</p>
-		<h:panelGrid columns="2">
-			<h:outputText value="Author name:" />
-			<h:inputText value="#{addPostController.articlePage.author}" />
-			<h:outputText value="Title:" />
-			<h:inputTextarea value="#{addPostController.articlePage.title}" />
-			<h:outputText value="Summary:" />
-			<h:inputTextarea value="#{addPostController.articlePage.summary}" />
-			<h:outputText value="Content:" />
-			<h:inputTextarea value="#{addPostController.articlePage.content}" />
-			<h:outputText value="" />
-			<h:commandButton value="Submit" action="#{addPostController.addArticle}"/>
-		</h:panelGrid>
+	
+	<h:form binding="#{addPostController.addArticleForm}" styleClass="addPost">
+		<h2>Article</h2>
+		<p>Author:</p>
+		<h:inputText value="#{addPostController.articlePage.author}" /> <br/>
+		<p>Title:</p>
+		<h:inputText value="#{addPostController.articlePage.title}" /> <br/>
+		<p>Summary:</p>
+		<h:inputTextarea styleClass="summary" value="#{addPostController.articlePage.summary}" /> <br/>
+		<p>Article content:</p>
+		<h:inputTextarea value="#{addPostController.articlePage.content}" /> <br/>
+		<h:commandButton styleClass="submit" value="Submit" action="#{addPostController.addArticle}"/>
 	</h:form>
 	
-	<h:form binding="#{addPostController.addQuestionForm}">
-		<p>Add Question</p>
-		<h:panelGrid columns="2">
-			<h:outputText value="Author name:" />
-			<h:inputText value="#{addPostController.questionPage.author}" />
-			<h:outputText value="Title:" />
-			<h:inputTextarea value="#{addPostController.questionPage.title}" />
-			<h:outputText value="Content:" />
-			<h:inputTextarea value="#{addPostController.questionPage.content}" />
-			<h:outputText value="" />
-			<h:commandButton value="Submit" action="#{addPostController.addQuestion}"/>
-		</h:panelGrid>
+	<h:form binding="#{addPostController.addQuestionForm}" styleClass="addPost">
+		<h2>Question</h2>
+		<p>Author:</p>
+		<h:inputText value="#{addPostController.questionPage.author}" /> <br/>
+		<p>Title:</p>
+		<h:inputText value="#{addPostController.questionPage.title}" /> <br/>
+		<p>Question content:</p>
+		<h:inputTextarea value="#{addPostController.questionPage.content}" /> <br/>
+		<h:commandButton styleClass="submit" value="Submit" action="#{addPostController.addQuestion}"/>
 	</h:form>
 </f:view>
+</div>
+
 </body>
 </html>

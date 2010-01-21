@@ -7,81 +7,75 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>List articles</title>
+	<title>Post Details</title>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/main.css" />
 </head>
-<body>
 
+<body>
+<div id="header">
+	<div class="wrapper"><a href="../index.jsp">Forum Application</a></div>
+</div>
+<div id="headline">
+	<div class="wrapper"><h1>Post Details</h1></div>
+</div>
+
+<br/>
+<div class="wrapper">
 <f:view beforePhase="#{showPostController.beforePhase}">
 	<f:loadBundle basename="app.bundle.messages" var="msg"/>
-	<h:form binding="#{showPostController.showArticleForm}">
-		<p>Article Post</p>
-		<h:outputText value="#{showPostController.articlePost.title}" />
-		<h:panelGrid columns="2">
-			<h:outputText value="Author name:" />
-			<h:outputText value="#{showPostController.articlePost.author}" />
-			<h:outputText value="Post date:" />
-			<h:outputText value="#{showPostController.articlePost.postDate}" />
-			<h:outputText value="Last update:" />
-			<h:outputText value="#{showPostController.articlePost.lastUpdate}" />
-			<h:outputText value="Summary:" />
-			<h:outputText value="#{showPostController.articlePost.summary}" />
-		</h:panelGrid>
-		<h:outputText value="#{showPostController.articlePost.content}" />
+	
+	<h:form binding="#{showPostController.showArticleForm}" styleClass="post">
+		<p><h:outputText styleClass="title" value="#{showPostController.articlePost.title}" /></p>
+		<p><h:outputText styleClass="summary" value="#{showPostController.articlePost.summary}" /></p>
+		<p><h:outputText styleClass="content" value="#{showPostController.articlePost.content}" /></p>
+		<div class="footer">
+			Posted by: <h:outputText styleClass="author" value="#{showPostController.articlePost.author}" />
+			Date: <h:outputText styleClass="date" value="#{showPostController.articlePost.postDate}" />
+		</div>
 	</h:form>
 	
-	<h:form binding="#{showPostController.showQuestionForm}">
-		<p>Question Post</p>
-		<h:outputText value="#{showPostController.questionPost.title}" />
-		<h:panelGrid columns="2">
-			<h:outputText value="Author name:" />
-			<h:outputText value="#{showPostController.questionPost.author}" />
-			<h:outputText value="Post date:" />
-			<h:outputText value="#{showPostController.questionPost.postDate}" />
-		</h:panelGrid>
-		<h:outputText value="#{showPostController.questionPost.content}" />
+	<h:form binding="#{showPostController.showQuestionForm}" styleClass="post">
+		<p><h:outputText styleClass="title" value="#{showPostController.questionPost.title}" /></p>
+		<p><h:outputText styleClass="content" value="#{showPostController.questionPost.content}" /></p>
+		<div class="footer">
+			Posted by: <h:outputText styleClass="author" value="#{showPostController.questionPost.author}" />
+			Date: <h:outputText styleClass="date" value="#{showPostController.questionPost.postDate}" />
+		</div>
 	</h:form>
+	<br/>
 	
 	<h:form>
 		<p>Article Comments:</p>
 		
 		<h:dataTable value="#{showPostController.comments}" var="comment">
 			<h:column>
-				<h:panelGrid columns="2">
-					<h:outputText value="Author: " />
-					<h:outputText value="#{comment.author}" />
-					<h:outputText value="Comment: " />
+				<div class="comment">
+					<p><h:outputText value="#{comment.author}" styleClass="author" /> says: </p>
 					<h:outputText value="#{comment.content}" />
-					<h:outputText value="Post Date: " />
-					<h:outputText value="#{comment.postDate}" />
-				</h:panelGrid>
+					<div class="footer">Date: <h:outputText styleClass="date" value="#{comment.postDate}" /></div>
+				</div>
 			</h:column>
 		</h:dataTable>
 	</h:form>
+	<br/>
 	
-	<h:form binding="#{showPostController.addArticleCommentForm}">
-		<p>Add comment:</p>
-		<h:panelGrid columns="2">
-			<h:outputText value="Author name:" />
-			<h:inputText value="#{showPostController.articleComment.author}" />
-			<h:outputText value="Comment:" />
-			<h:inputTextarea value="#{showPostController.articleComment.content}" />
-			<h:outputText value="" />
-			<h:commandButton value="Submit" action="#{showPostController.addComment}"/>
-		</h:panelGrid>
+	<h:form binding="#{showPostController.addArticleCommentForm}" styleClass="addComment">
+		<p>Leave a comment:</p>
+		<h:inputText value="#{showPostController.articleComment.author}" />
+		<h:outputText value="Author" /> <br/>
+		<h:inputTextarea value="#{showPostController.articleComment.content}" /> <br/>
+		<h:commandButton styleClass="submit" value="Submit" action="#{showPostController.addComment}"/>
 	</h:form>
 	
-	<h:form binding="#{showPostController.addQuestionCommentForm}">
-		<p>Add comment:</p>
-		<h:panelGrid columns="2">
-			<h:outputText value="Author name:" />
-			<h:inputText value="#{showPostController.questionComment.author}" />
-			<h:outputText value="Comment:" />
-			<h:inputTextarea value="#{showPostController.questionComment.content}" />
-			<h:outputText value="" />
-			<h:commandButton value="Submit" action="#{showPostController.addComment}"/>
-		</h:panelGrid>
+	<h:form binding="#{showPostController.addQuestionCommentForm}" styleClass="addComment">
+		<p>Leave a comment:</p>
+		<h:inputText value="#{showPostController.questionComment.author}" />
+		<h:outputText value="Author" /> <br/>
+		<h:inputTextarea value="#{showPostController.questionComment.content}" /> <br/>
+		<h:commandButton styleClass="submit" value="Submit" action="#{showPostController.addComment}"/>
 	</h:form>
-	
 </f:view>
+</div>
+
 </body>	
 </html> 

@@ -7,13 +7,18 @@ body {
 	color:#555555;
 	font-family:"Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
 	line-height:22px;
+	font-size: 14px;
 }
-h1 {
+h1, h2 {
 	color:#21759B;
 	font-weight:normal;
 	font-family:Georgia,Times,"Times New Roman",serif;
 	font-size:20px;
 	font-style:normal;
+}
+h2 {
+	font-size: 20px;
+	margin-bottom: 6px;
 }
 a {
 	color:#21759B;
@@ -34,9 +39,12 @@ a:visited {
 	height:70px;
 	min-width:960px;
 }
-#header h1 {
-	color: white;
+#header a, #header a.visited {
+	font-weight:normal;
+	font-family:Georgia,Times,"Times New Roman",serif;
 	font-size:30px;
+	font-style:normal;
+	color: white;
 	display:block;
 	float:left;
 	margin-top: 16px;
@@ -50,8 +58,20 @@ a:visited {
 }
 #headline h1 {
 	color:#555555;
-	font-size:20px;
+	font-size:24px;
 	padding-top: 16px;
+}
+
+.nav a {
+	color:#FFFFFF;
+	display:block;
+	padding:4px 10px;
+	text-decoration:none;
+	cursor:pointer;
+	background:#777777;
+	margin-right: 7px;
+	display: block;
+	float: left;
 }
 
 .postsTable .header {
@@ -60,4 +80,70 @@ a:visited {
 .postsTable td {
 	padding: 2px;
 	padding-right: 20px;
+}
+
+.post {
+	margin: 4px;
+	margin-left: 0;
+	padding: 4px;
+	padding-left: 0;
+}
+
+.post .title {
+	color:#4CA6CF;
+	font-size: 18px;
+}
+
+.post .footer, .comment .footer {
+	font-size: 12px;
+}
+
+.post .footer .author, .comment .author {
+	font-style: italic;
+	color:#21759B;
+}
+
+.post .footer .date, .comment .footer .date {
+	font-style: italic;
+}
+
+.comment {
+	margin-bottom: 10px;
+}
+
+.addComment input, .addComment textarea {
+	width:250px;
+	border:1px solid #CCCCCC;
+	margin-top:5px;
+	margin-right: 10px;
+	padding:2px;
+}
+
+.addComment textarea {
+	width: 400px;
+}
+
+.addComment .submit {
+	width: 80px;
+}
+
+.addPost input, .addPost textarea {
+	width:300px;
+	border:1px solid #CCCCCC;
+	margin-top:5px;
+	margin-right: 10px;
+	padding:2px;
+}
+
+.addPost textarea {
+	width: 500px;
+	height: 200px;
+}
+
+.addPost .summary {
+	height: 60px;
+}
+
+.addPost .submit {
+	width: 80px;
 }
