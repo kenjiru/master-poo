@@ -10,8 +10,8 @@ public class QuestionFactory implements PostFactory {
 	public QuestionPageBuilder questionBuilder;
 	
 	private QuestionFactory() { 
+		questionBuilder = new QuestionPageBuilder();
 	}
-	
 	
 	public static QuestionFactory getInstance() {
 		if (questionFactory == null)

@@ -18,10 +18,12 @@ public class ShowPostController {
 	private UIForm addQuestionCommentForm;
 	
 	public ShowPostController() {
-		articlePost = new ArticlePage();
-		questionPost = new QuestionPage();
-		articleComment = new ArticleComment();
-		questionComment = new QuestionComment();
+		ArticleFactory articleFactory = ArticleFactory.getInstance();
+		articleComment = (ArticleComment) articleFactory.createComment();
+		
+		QuestionFactory questionFactory = QuestionFactory.getInstance();
+		questionComment = (QuestionComment) questionFactory.createComment();
+		
 		currentPost = null;
 	}
 	
@@ -30,9 +32,9 @@ public class ShowPostController {
 		this.dataRepository = dataRepository;
 	}
 	
-	// TODO use factories to generate Pages and Comments
 	public void beforePhase(PhaseEvent ev) {
 		currentPost = dataRepository.getCurrentPost();
+		
 		showArticleForm.setRendered(false);
 		showQuestionForm.setRendered(false);
 		addArticleCommentForm.setRendered(false);
@@ -53,11 +55,9 @@ public class ShowPostController {
 	// TODO remove data set
 	public String addComment() {
 		if (currentPost instanceof ArticlePage) {
-			articleComment.setPostDate(Calendar.getInstance().getTime());
 			dataRepository.addComment(currentPost, articleComment);
 		}
 		if (currentPost instanceof QuestionPage) {
-			questionComment.setPostDate(Calendar.getInstance().getTime());
 			dataRepository.addComment(currentPost, questionComment);
 		}
 		

@@ -10,7 +10,9 @@ public class ArticleFactory implements PostFactory {
 	private static ArticleFactory articleFactory;
 	private ArticlePageBuilder articleBuilder;
 	
-	private ArticleFactory() { }
+	private ArticleFactory() { 
+		articleBuilder = new ArticlePageBuilder();
+	}
 	
 	public static ArticleFactory getInstance() {
 		if (articleFactory == null)

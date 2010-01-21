@@ -15,8 +15,12 @@ public class AddPostController {
 	private QuestionPage questionPage;
 	
 	public AddPostController() {
-		articlePage = new ArticlePage();
-		questionPage = new QuestionPage();
+		ArticleFactory articleFactory = ArticleFactory.getInstance();
+		articlePage = (ArticlePage) articleFactory.createPage();
+		
+		QuestionFactory questionFactory = QuestionFactory.getInstance();
+		questionPage = (QuestionPage) questionFactory.createPage();
+		
 		postType = "none";
 	}
 	
