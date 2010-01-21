@@ -29,24 +29,16 @@
 	<f:loadBundle basename="app.bundle.messages" var="msg"/>
 	<h:form binding="#{listPostsController.listPostsForm}">
 		<h:dataTable value="#{listPostsController.posts}" var="post"
-			rowClasses="oddRow, evenRow" styleClass="postsTable" headerClass="header" columnClasses="normal">
+			rowClasses="oddRow, evenRow" styleClass="postsTable" headerClass="header">
 			<h:column>
-				<f:facet name="header">
-					<h:column>
-						<h:outputText value="Title" />
-					</h:column>
-				</f:facet>
-				<h:commandLink value="#{post.title}" action="#{listPostsController.showPost}">
-					<f:setPropertyActionListener target="#{listPostsController.selectedPost}" value="#{post}" />
-				</h:commandLink>
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					<h:column>
-						<h:outputText value="Date" />
-					</h:column>
-				</f:facet>
-				<h:outputText value="#{post.postDate}" />
+				<h3>
+					<h:commandLink value="#{post.title}" action="#{listPostsController.showPost}">
+						<f:setPropertyActionListener target="#{listPostsController.selectedPost}" value="#{post}" />
+					</h:commandLink>
+				</h3>
+				<div class="content">
+					<h:outputText value="#{post.content}" />
+				</div>
 			</h:column>
 		</h:dataTable>
 		
