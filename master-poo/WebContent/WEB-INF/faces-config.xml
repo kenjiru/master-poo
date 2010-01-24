@@ -55,4 +55,20 @@
 			<to-view-id>/pages/addPost.jsp</to-view-id> 
 		</navigation-case> 
 	</navigation-rule>
+	
+	<navigation-rule> 
+		<from-view-id>/pages/showPost.jsp</from-view-id> 
+		<navigation-case> 
+			<from-outcome>back</from-outcome> 
+			<to-view-id>/pages/listPosts.jsp</to-view-id> 
+		</navigation-case> 
+	</navigation-rule>
+	
+	<navigation-rule> 
+		<from-view-id>/pages/addPost.jsp</from-view-id> 
+		<navigation-case> 
+			<from-outcome>back</from-outcome> 
+			<to-view-id>/pages/listPosts.jsp</to-view-id> 
+		</navigation-case> 
+	</navigation-rule>
 </faces-config>
